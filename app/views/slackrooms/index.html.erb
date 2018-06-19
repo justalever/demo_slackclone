@@ -1,0 +1,29 @@
+<h1 class="title is-3">Slackrooms</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+      <th colspan="4">
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slackrooms.each do |slackroom| %>
+      <tr>
+        <td><%= slackroom.name %></td>
+        <td><%= link_to 'Show', slackroom %></td>
+        <td><%= link_to 'Edit', edit_slackroom_path(slackroom) %></td>
+        <td><%= link_to 'Destroy', slackroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% # post because it's create action %>
+        <td><%= link_to 'Join', slackroom_slackroom_users_path(slackroom), method: :post  %>
+        <td><%= link_to 'Leave', slackroom_slackroom_users_path(slackroom), method: :delete  %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slackroom', new_slackroom_path %>

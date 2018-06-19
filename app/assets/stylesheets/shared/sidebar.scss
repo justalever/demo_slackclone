@@ -1,0 +1,39 @@
+.sidebar {
+  position: fixed;
+  width: 260px;
+  top: 0;
+  left: 0;
+  bottom:0;
+  min-width: 1px;
+  max-width: 260px;
+  background: var(--sidebar-background-color);
+  color: var(--sidebar-link-color);
+  z-index: 201;
+  box-sizing: content-box;
+  visibility: visible;
+  min-height: 100%;
+  a {
+    color: var(--sidebar-link-color);
+    text-decoration: none;
+  }
+}
+
+.slackrooms-list {
+  padding: 10px;
+
+  .slackrooms {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 5px;
+      border-radius: 3px;
+      a { display: block; }
+
+      &:hover {
+        background: var(--sidebar-hover-background-color);
+        color: var(--sidebar-active-link-color);
+      }
+    }
+  }
+}

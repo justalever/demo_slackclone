@@ -1,0 +1,2 @@
+module SlackroomsHelper
+end

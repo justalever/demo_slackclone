@@ -1,0 +1,24 @@
+// Place all the styles related to the Slackrooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slackroom-messages {
+  position: relative;
+  width: 100%;
+  .messages {
+    overflow-y: scroll;
+    height: 85vh;
+    width: 100%;
+  }
+}
+
+.slackroom-message-field {
+  border: 2px solid rgba(160,160,162,.7);
+  border-radius: .375rem;
+  padding: 10px;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+    border-color: rgba(160, 160, 162, 1);
+  }
+}

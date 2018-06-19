@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slackroom: one
+  user: one
+  content: MyText
+
+two:
+  slackroom: two
+  user: two
+  content: MyText

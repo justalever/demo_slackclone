@@ -1,0 +1,25 @@
+<p>
+  <strong>Name:</strong>
+  <%= @slackroom.name %>
+</p>
+
+<div class="slackroom-messages">
+  <div class="messages">
+    <% @messages.each do |message| %>
+    <div><strong><%= message.user.username %></strong> <%= message.content %></div>
+    <% end %>
+  </div>
+
+      <%# TOD: remote: true %>
+    <%= form_for [@slackroom, Message.new] do |f| %>
+      <%= f.text_area :content, rows:1, autofocus: true, class: 'slackroom-message-field' %>
+    <% end %>
+
+    <%#= simple_form_for @slackroom, url: new_slackroom_message_path(@slackroom), method: :post,  remote: true do |f| %>
+      <%#= f.input :content, class: 'slackroom-message-field' %>
+    <%# end %>
+
+</div>
+
+
+

@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_015827) do
+ActiveRecord::Schema.define(version: 2018_05_24_022200) do
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "slackroom_id"
+    t.integer "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slackroom_id"], name: "index_messages_on_slackroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "slackroom_users", force: :cascade do |t|
+    t.integer "slackroom_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slackroom_id"], name: "index_slackroom_users_on_slackroom_id"
+    t.index ["user_id"], name: "index_slackroom_users_on_user_id"
+  end
+
+  create_table "slackrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_05_24_015827) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
